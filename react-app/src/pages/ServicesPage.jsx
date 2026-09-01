@@ -1,7 +1,7 @@
 import { Link, Navigate } from 'react-router-dom';
 
 function ServicesPage() {
-  const hasLead = localStorage.getItem('benvra_lead_status') === 'completed';
+  const hasLead = typeof window !== 'undefined' && localStorage.getItem('benvra_lead_status') === 'completed';
 
   if (!hasLead) {
     return <Navigate to="/capture" replace />;

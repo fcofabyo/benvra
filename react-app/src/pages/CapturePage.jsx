@@ -5,13 +5,14 @@ const leadKey = 'benvra_lead_status';
 
 function CapturePage() {
   const navigate = useNavigate();
+  const isBrowser = typeof window !== 'undefined';
   const [form, setForm] = useState({
     name: '',
     business: '',
-    service: 'web-design',
+    service: 'toda-gestao',
   });
 
-  const alreadyCompleted = localStorage.getItem(leadKey) === 'completed';
+  const alreadyCompleted = isBrowser && localStorage.getItem(leadKey) === 'completed';
 
   if (alreadyCompleted) {
     return <Navigate to="/servicos" replace />;
@@ -28,6 +29,12 @@ function CapturePage() {
     localStorage.setItem('benvra_lead_business', form.business);
     localStorage.setItem('benvra_lead_service', form.service);
     localStorage.setItem(leadKey, 'completed');
+
+    if (form.service === 'toda-gestao') {
+      navigate('/');
+      return;
+    }
+
     navigate('/servicos');
   };
 
@@ -63,6 +70,7 @@ function CapturePage() {
           <label>
             Serviço de interesse
             <select name="service" value={form.service} onChange={handleChange}>
+              <option value="toda-gestao">Toda a Gestão</option>
               <option value="web-design">Web Design</option>
               <option value="organic-content">Conteúdo Orgânico</option>
               <option value="paid-traffic">Paid Traffic</option>
@@ -71,7 +79,7 @@ function CapturePage() {
           </label>
 
           <button type="submit" className="button primary full">Continuar</button>
-          <Link className="small-link" to="/">Voltar ao início</Link>
+          <Link className="small-link" to="/capture">Voltar ao início</Link>
         </form>
       </div>
     </main>
