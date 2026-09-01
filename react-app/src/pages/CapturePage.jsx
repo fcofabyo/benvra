@@ -16,7 +16,7 @@ function CapturePage() {
   const alreadyCompleted = isBrowser && localStorage.getItem(leadKey) === 'completed';
 
   if (alreadyCompleted) {
-    const targetRoute = selectedService === 'toda-gestao' || selectedService === 'main' ? '/' : '/servicos';
+    const targetRoute = selectedService === 'toda-gestao' ? '/' : '/servicos';
     return <Navigate to={targetRoute} replace />;
   }
 

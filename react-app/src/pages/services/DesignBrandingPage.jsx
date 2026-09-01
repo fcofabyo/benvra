@@ -4,7 +4,7 @@ function DesignBrandingPage() {
   const isBrowser = typeof window !== 'undefined';
   const hasLead = isBrowser && localStorage.getItem('benvra_lead_status') === 'completed';
   const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
-  const isAllowed = selectedService === 'design-branding' || selectedService === 'toda-gestao' || selectedService === 'main';
+  const isAllowed = selectedService === 'design-branding';
 
   if (!hasLead || !isAllowed) return <Navigate to="/capture" replace />;
 

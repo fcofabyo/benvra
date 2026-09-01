@@ -961,7 +961,7 @@ footer{
   // Garantir que o site principal só abra quando o cliente escolher "Toda a Gestão".
   const leadStatus = localStorage.getItem('benvra_lead_status');
   const selectedService = localStorage.getItem('benvra_lead_service');
-  const isMainAccessAllowed = selectedService === 'main' || selectedService === 'toda-gestao';
+  const isMainAccessAllowed = selectedService === 'toda-gestao';
 
   if (leadStatus !== 'completed' || !isMainAccessAllowed) {
     window.location.replace('capture.html');

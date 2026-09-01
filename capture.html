@@ -270,7 +270,7 @@ button:hover{
         <label for="service">Qual serviço te interessa?</label>
         <select id="service" name="service" required>
           <option value="">Selecione uma opção</option>
-          <option value="main">Tudo - Ecossistema Completo</option>
+          <option value="toda-gestao">Toda a Gestão</option>
           <option value="web-design">Web Design & Desenvolvimento</option>
           <option value="organic-content">Conteúdo Orgânico</option>
           <option value="paid-traffic">Tráfego Pago</option>
@@ -303,9 +303,8 @@ const leadStatus = localStorage.getItem('benvra_lead_status');
 const selectedService = localStorage.getItem('benvra_lead_service');
 
 if (leadStatus === 'completed') {
-  const isMainAccessAllowed = selectedService === 'main' || selectedService === 'toda-gestao';
+  const isMainAccessAllowed = selectedService === 'toda-gestao';
   const routeMap = {
-    main: 'index.html',
     'toda-gestao': 'index.html',
     'web-design': 'services/web-design.html',
     'organic-content': 'services/organic-content.html',
@@ -347,7 +346,7 @@ document.getElementById('captureForm').addEventListener('submit', function(e) {
 
   // Mapear serviço para página correta
   const servicePages = {
-    main: 'index.html',
+    'toda-gestao': 'index.html',
     'web-design': 'services/web-design.html',
     'organic-content': 'services/organic-content.html',
     'paid-traffic': 'services/paid-traffic.html',

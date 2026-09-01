@@ -4,7 +4,7 @@ function PaidTrafficPage() {
   const isBrowser = typeof window !== 'undefined';
   const hasLead = isBrowser && localStorage.getItem('benvra_lead_status') === 'completed';
   const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
-  const isAllowed = selectedService === 'paid-traffic' || selectedService === 'toda-gestao' || selectedService === 'main';
+  const isAllowed = selectedService === 'paid-traffic';
 
   if (!hasLead || !isAllowed) return <Navigate to="/capture" replace />;
 

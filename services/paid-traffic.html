@@ -131,7 +131,7 @@ footer{ border-top:1px solid var(--line); padding:40px 60px; display:flex; align
 <script>
   const leadStatus = localStorage.getItem('benvra_lead_status');
   const selectedService = localStorage.getItem('benvra_lead_service');
-  const allowedServices = ['paid-traffic', 'toda-gestao', 'main'];
+  const allowedServices = ['paid-traffic'];
 
   if (leadStatus !== 'completed' || !allowedServices.includes(selectedService)) {
     window.location.replace('../capture.html');
