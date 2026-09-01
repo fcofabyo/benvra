@@ -952,9 +952,15 @@ footer{
 }
 
 </style>
-</head>
 
-<body>
+<script>
+  // Redirecionar para captura na primeira visita
+  if (!localStorage.getItem('benvra_lead_name')) {
+    window.location.href = 'capture.html';
+  }
+</script>
+
+</head>\n
 
 <!-- NAV -->
 
