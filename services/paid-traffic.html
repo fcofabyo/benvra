@@ -99,9 +99,44 @@ nav{
 footer{ border-top:1px solid var(--line); padding:40px 60px; display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; }
 .footer-brand{ font-family:'Cormorant Garamond',serif; font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--primary-2); }
 
-@media(max-width:980px){ nav{ padding:20px 24px; } .hero, .section, footer{ padding-left:24px; padding-right:24px; } .hero{ grid-template-columns:1fr; padding-top:150px; } .hero-visual{ min-height:380px; } .feature-grid{ grid-template-columns:1fr; } footer{ flex-direction:column; gap:12px; text-align:center; } }
+@media(max-width:980px){
+  nav{ padding:20px 24px; }
+  .hero, .section, footer{ padding-left:24px; padding-right:24px; }
+  .hero{ grid-template-columns:1fr; padding-top:150px; }
+  .hero-visual{ min-height:380px; }
+  .feature-grid{ grid-template-columns:1fr; }
+  footer{ flex-direction:column; gap:12px; text-align:center; }
+}
+
+@media(max-width:640px){
+  nav{ flex-wrap:wrap; gap:12px; justify-content:center; }
+  .nav-logo, .nav-back{ justify-content:center; }
+  .hero{ padding-top:150px; padding-bottom:40px; }
+  .hero-title{ font-size:clamp(42px, 14vw, 58px); }
+  .hero-sub{ font-size:15px; }
+  .btn-primary{ display:block; width:100%; text-align:center; }
+  .hero-content{ max-width:100%; }
+  .section{ padding-top:72px; padding-bottom:60px; }
+  .section-title{ font-size:clamp(32px, 11vw, 42px); }
+  .content-block{ display:grid; gap:20px; }
+  .content-block h3{ font-size:24px; }
+  .content-block ul{ padding-left:18px; }
+  .cta-box{ padding:32px 20px; }
+  .cta-box h2{ font-size:34px; }
+  .cta-box p{ font-size:14px; }
+  footer{ padding:30px 20px; }
+}
 
 </style>
+<script>
+  const leadStatus = localStorage.getItem('benvra_lead_status');
+  const selectedService = localStorage.getItem('benvra_lead_service');
+  const allowedServices = ['paid-traffic', 'toda-gestao', 'main'];
+
+  if (leadStatus !== 'completed' || !allowedServices.includes(selectedService)) {
+    window.location.replace('../capture.html');
+  }
+</script>
 </head>
 
 <body>

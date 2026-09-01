@@ -1,8 +1,12 @@
 import { Link, Navigate } from 'react-router-dom';
 
 function OrganicContentPage() {
-  const hasLead = localStorage.getItem('benvra_lead_status') === 'completed';
-  if (!hasLead) return <Navigate to="/capture" replace />;
+  const isBrowser = typeof window !== 'undefined';
+  const hasLead = isBrowser && localStorage.getItem('benvra_lead_status') === 'completed';
+  const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
+  const isAllowed = selectedService === 'organic-content' || selectedService === 'toda-gestao' || selectedService === 'main';
+
+  if (!hasLead || !isAllowed) return <Navigate to="/capture" replace />;
 
   return (
     <main className="page-shell service-detail">

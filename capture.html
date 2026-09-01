@@ -314,7 +314,10 @@ if (leadStatus === 'completed') {
   };
 
   const targetPage = isMainAccessAllowed ? 'index.html' : (routeMap[selectedService] || 'capture.html');
-  window.location.replace(targetPage);
+
+  if (window.location.pathname.endsWith('capture.html')) {
+    window.location.replace(targetPage);
+  }
 }
 
 if (storedName) {

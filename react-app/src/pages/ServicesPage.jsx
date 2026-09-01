@@ -1,9 +1,16 @@
 import { Link, Navigate } from 'react-router-dom';
 
 function ServicesPage() {
-  const hasLead = typeof window !== 'undefined' && localStorage.getItem('benvra_lead_status') === 'completed';
+  const isBrowser = typeof window !== 'undefined';
+  const hasLead = isBrowser && localStorage.getItem('benvra_lead_status') === 'completed';
+  const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
+  const isServiceSelectionValid =
+    !selectedService ||
+    selectedService === 'toda-gestao' ||
+    selectedService === 'main' ||
+    ['web-design', 'organic-content', 'paid-traffic', 'design-branding'].includes(selectedService);
 
-  if (!hasLead) {
+  if (!hasLead || !isServiceSelectionValid) {
     return <Navigate to="/capture" replace />;
   }
 
