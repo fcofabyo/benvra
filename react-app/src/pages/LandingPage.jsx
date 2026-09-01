@@ -7,7 +7,9 @@ function LandingPage() {
   const hasLead = isBrowser && localStorage.getItem(leadKey) === 'completed';
   const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
 
-  if (!hasLead || selectedService !== 'toda-gestao') {
+  const isMainAccessAllowed = selectedService === 'toda-gestao' || selectedService === 'main';
+
+  if (!hasLead || !isMainAccessAllowed) {
     return <Navigate to="/capture" replace />;
   }
 

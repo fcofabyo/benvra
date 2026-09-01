@@ -300,9 +300,21 @@ const businessInput = document.getElementById('business');
 const storedName = localStorage.getItem('benvra_lead_name');
 const storedBusiness = localStorage.getItem('benvra_lead_business');
 const leadStatus = localStorage.getItem('benvra_lead_status');
+const selectedService = localStorage.getItem('benvra_lead_service');
 
 if (leadStatus === 'completed') {
-  window.location.href = 'index.html';
+  const isMainAccessAllowed = selectedService === 'main' || selectedService === 'toda-gestao';
+  const routeMap = {
+    main: 'index.html',
+    'toda-gestao': 'index.html',
+    'web-design': 'services/web-design.html',
+    'organic-content': 'services/organic-content.html',
+    'paid-traffic': 'services/paid-traffic.html',
+    'design-branding': 'services/design-branding.html'
+  };
+
+  const targetPage = isMainAccessAllowed ? 'index.html' : (routeMap[selectedService] || 'capture.html');
+  window.location.replace(targetPage);
 }
 
 if (storedName) {
@@ -332,17 +344,17 @@ document.getElementById('captureForm').addEventListener('submit', function(e) {
 
   // Mapear serviço para página correta
   const servicePages = {
-    'main': 'index.html',
+    main: 'index.html',
     'web-design': 'services/web-design.html',
     'organic-content': 'services/organic-content.html',
     'paid-traffic': 'services/paid-traffic.html',
     'design-branding': 'services/design-branding.html'
   };
 
-  const targetPage = servicePages[service] || 'index.html';
+  const targetPage = servicePages[service] || 'capture.html';
 
-  // Redirecionar para a página apropriada
-  window.location.href = targetPage;
+  // Redirecionar para a página apropriada sem empilhar histórico do navegador
+  window.location.replace(targetPage);
 });
 
 </script>

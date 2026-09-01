@@ -958,11 +958,13 @@ footer{
 </style>
 
 <script>
-  // Garantir que a página de captura seja a primeira etapa do funil.
-  // Só deixa entrar no site principal depois que o cliente conclui o cadastro.
+  // Garantir que o site principal só abra quando o cliente escolher "Toda a Gestão".
   const leadStatus = localStorage.getItem('benvra_lead_status');
-  if (leadStatus !== 'completed') {
-    window.location.href = 'capture.html';
+  const selectedService = localStorage.getItem('benvra_lead_service');
+  const isMainAccessAllowed = selectedService === 'main' || selectedService === 'toda-gestao';
+
+  if (leadStatus !== 'completed' || !isMainAccessAllowed) {
+    window.location.replace('capture.html');
   }
 </script>
 

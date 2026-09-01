@@ -12,10 +12,12 @@ function CapturePage() {
     service: 'toda-gestao',
   });
 
+  const selectedService = isBrowser ? localStorage.getItem('benvra_lead_service') : null;
   const alreadyCompleted = isBrowser && localStorage.getItem(leadKey) === 'completed';
 
   if (alreadyCompleted) {
-    return <Navigate to="/servicos" replace />;
+    const targetRoute = selectedService === 'toda-gestao' || selectedService === 'main' ? '/' : '/servicos';
+    return <Navigate to={targetRoute} replace />;
   }
 
   const handleChange = (event) => {
