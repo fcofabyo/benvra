@@ -274,6 +274,7 @@ nav{
 
   display:flex;
   gap:60px;
+  flex-wrap:wrap;
 }
 
 .hero-stat-number{
@@ -286,6 +287,60 @@ nav{
 .hero-stat-label{
   font-size:12px;
   color:var(--muted);
+}
+
+.ecosystem-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:20px;
+}
+
+.ecosystem-card{
+  background:linear-gradient(180deg, rgba(17,20,22,.95), rgba(10,12,14,.96));
+  border:1px solid rgba(201,168,76,.12);
+  padding:42px 32px;
+  transition:.3s ease;
+}
+
+.ecosystem-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(201,168,76,.3);
+}
+
+.tool-list{
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:24px;
+}
+
+.tool-list li{
+  padding:8px 12px;
+  background:rgba(201,168,76,.08);
+  border:1px solid rgba(201,168,76,.15);
+  color:var(--gold-light);
+  font-size:11px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+
+.stack-grid{
+  display:grid;
+  grid-template-columns:repeat(6, minmax(0, 1fr));
+  gap:16px;
+  margin-top:30px;
+}
+
+.stack-item{
+  background:rgba(201,168,76,.04);
+  border:1px solid rgba(201,168,76,.12);
+  padding:18px 14px;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--gold-light);
 }
 
 /* MARQUEE */
@@ -797,16 +852,16 @@ footer{
   <div class="hero-content">
 
     <div class="hero-eyebrow">
-      Tráfego Orgânico · Posicionamento · Escala
+      Agência de marketing digital · desenvolvimento · crescimento
     </div>
 
     <h1 class="hero-title">
-      Empresas que querem crescer<br>
-      precisam ser <em>vistas.</em>
+      Sua marca, seu site e seus <em>resultados</em><br>
+      em um único ecossistema.
     </h1>
 
     <p class="hero-sub">
-      A Benvra ajuda empresas a gerar mais clientes, fortalecer sua marca e transformar atenção em faturamento através de estratégia, posicionamento digital e gestão completa de crescimento.
+      A Benvra conecta desenvolvimento web, branding, conteúdo orgânico, tráfego pago e estratégia para transformar presença digital em demanda real, autoridade e crescimento de negócio.
     </p>
 
     <div class="hero-buttons">
@@ -819,8 +874,8 @@ footer{
         Solicitar análise
       </a>
 
-      <a href="#servicos" class="btn-secondary">
-        Conhecer serviços
+      <a href="#ecosistema" class="btn-secondary">
+        Ver ecossistema
       </a>
 
     </div>
@@ -828,8 +883,19 @@ footer{
   </div>
 
   <div class="hero-stats">
-
-
+    <div>
+      <div class="hero-stat-number">+40</div>
+      <div class="hero-stat-label">sites e landing pages entregues</div>
+    </div>
+    <div>
+      <div class="hero-stat-number">7x</div>
+      <div class="hero-stat-label">mais clareza na conversão</div>
+    </div>
+    <div>
+      <div class="hero-stat-number">24/7</div>
+      <div class="hero-stat-label">presença digital em movimento</div>
+    </div>
+  </div>
 
 </section>
 
@@ -839,29 +905,113 @@ footer{
 
   <div class="marquee-track">
 
-    <div class="marquee-item"><span>Tráfego Pago</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Posicionamento Digital</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Geração de Leads</span><div class="marquee-dot"></div></div>
-
+    <div class="marquee-item"><span>Desenvolvimento Web</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>TypeScript</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>React</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Next.js</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Tailwind</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Landing Page</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>SEO</span><div class="marquee-dot"></div></div>
     <div class="marquee-item"><span>Meta Ads</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Google Ads</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Escala de Negócios</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Autoridade Digital</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Conversão</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Tráfego Orgânico</span><div class="marquee-dot"></div></div>
-
-    <div class="marquee-item"><span>Posicionamento Digital</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Instagram</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Design Visual</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Domínio</span><div class="marquee-dot"></div></div>
+    <div class="marquee-item"><span>Hospedagem</span><div class="marquee-dot"></div></div>
 
   </div>
 
 </div>
+
+<!-- ECOSSISTEMA -->
+
+<section class="section" id="ecosistema">
+
+  <div class="section-eyebrow">
+    Ecossistema completo
+  </div>
+
+  <h2 class="section-title">
+    A estratégia que une <em>marca, tecnologia e vendas.</em>
+  </h2>
+
+  <div class="ecosystem-grid">
+
+    <div class="ecosystem-card">
+      <div class="service-number">01</div>
+      <div class="service-title">Desenvolvimento Web</div>
+      <div class="service-desc">
+        Sites institucionais, landing pages, páginas de conversão e presença digital com foco em performance, estrutura, velocidade e posicionamento no mercado.
+      </div>
+      <ul class="tool-list">
+        <li>TypeScript</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Next.js</li>
+        <li>Tailwind</li>
+        <li>SEO</li>
+      </ul>
+    </div>
+
+    <div class="ecosystem-card">
+      <div class="service-number">02</div>
+      <div class="service-title">Tráfego Orgânico</div>
+      <div class="service-desc">
+        Conteúdo pensado para vender, criar autoridade e gerar relacionamento com o público. Reels, carrosséis, copy, estratégia e acompanhamento para posicionar sua marca no Instagram.
+      </div>
+      <ul class="tool-list">
+        <li>Instagram</li>
+        <li>Reels</li>
+        <li>Copy</li>
+        <li>Edição</li>
+        <li>Calendário</li>
+        <li>Presencial</li>
+      </ul>
+    </div>
+
+    <div class="ecosystem-card">
+      <div class="service-number">03</div>
+      <div class="service-title">Gestão de Tráfego Pago</div>
+      <div class="service-desc">
+        Campanhas no Facebook Ads e Instagram Ads com foco real em cliques que viram clientes. Estratégia, segmentação, criativos, otimização e relatórios claros.
+      </div>
+      <ul class="tool-list">
+        <li>Meta Ads</li>
+        <li>Campanhas</li>
+        <li>Relatórios</li>
+        <li>Segmentação</li>
+        <li>Otimização</li>
+        <li>Conversão</li>
+      </ul>
+    </div>
+
+    <div class="ecosystem-card">
+      <div class="service-number">04</div>
+      <div class="service-title">Design & Criação Visual</div>
+      <div class="service-desc">
+        Identidade visual, materiais digitais, campanhas criativas, animações e elementos gráficos que tornam a marca memorável e profissional em todos os canais.
+      </div>
+      <ul class="tool-list">
+        <li>Branding</li>
+        <li>Criação</li>
+        <li>Identidade</li>
+        <li>Campanhas</li>
+        <li>Social</li>
+        <li>Visual</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="stack-grid">
+    <div class="stack-item">Next</div>
+    <div class="stack-item">React</div>
+    <div class="stack-item">Tailwind</div>
+    <div class="stack-item">Meta Ads</div>
+    <div class="stack-item">Domínio</div>
+    <div class="stack-item">Hospedagem</div>
+  </div>
+
+</section>
 
 <!-- SERVIÇOS -->
 
@@ -872,51 +1022,33 @@ footer{
   </div>
 
   <h2 class="section-title">
-    Estratégias para empresas que querem <em>crescer.</em>
+    Estratégias para empresas que querem <em>crescer de verdade.</em>
   </h2>
 
   <div class="services-grid">
 
     <div class="service-card">
-
       <div class="service-number">01</div>
-
-      <div class="service-title">
-        Tráfego Orgânico
-      </div>
-
+      <div class="service-title">Sites e landing pages</div>
       <div class="service-desc">
-        Conteúdos no instagram, Tiktok, Facebook e Google para atrair clientes realmente prontos para comprar.
+        Sites modernos e high-conversion para apresentar sua marca, captar leads e vender com clareza e autoridade.
       </div>
-
     </div>
 
     <div class="service-card">
-
       <div class="service-number">02</div>
-
-      <div class="service-title">
-        Posicionamento Digital
-      </div>
-
+      <div class="service-title">Conteúdo que performa</div>
       <div class="service-desc">
-        Construção de autoridade digital para transformar sua empresa em referência no mercado.
+        Estratégia editorial para Instagram, captação de atenção, edição profissional e storytelling que converte seguidores em clientes.
       </div>
-
     </div>
 
     <div class="service-card">
-
       <div class="service-number">03</div>
-
-      <div class="service-title">
-        Gestão Completa
-      </div>
-
+      <div class="service-title">Campanhas com retorno</div>
       <div class="service-desc">
-        Estratégia, conteúdo, acompanhamento, posicionamento e crescimento digital em uma única gestão.
+        Gestão de tráfego pago em Facebook Ads com criativos, segmentação, otimização contínua e relatórios detalhados de performance.
       </div>
-
     </div>
 
   </div>
@@ -932,69 +1064,46 @@ footer{
   </div>
 
   <h2 class="section-title">
-    Crescimento exige <em>estratégia.</em>
+    Não vendemos só marketing.<br>
+    Vendemos <em>resultado e presença.</em>
   </h2>
 
   <div class="philosophy-intro">
-    A maioria das agências pensa em fechar contratos. A Benvra pensa em construir empresas fortes, posicionadas e constantemente crescendo através da internet.
+    O crescimento real acontece quando branding, tecnologia, conteúdo e tráfego trabalham juntos. A Benvra cria esse sistema para sua empresa aparecer com autoridade, vender com clareza e escalar de forma previsível.
   </div>
 
   <div class="pillars">
 
     <div class="pillar">
-
       <div class="pillar-number">01</div>
-
-      <div class="pillar-title">
-        Resultado acima de vaidade
-      </div>
-
+      <div class="pillar-title">Estratégia antes de execução</div>
       <div class="pillar-desc">
-        Nosso foco não é postar por postar. Tudo precisa gerar percepção, autoridade e crescimento real.
+        Tudo começa com planejamento, diagnóstico e definição de metas claras para garantir que cada ação gere crescimento.
       </div>
-
     </div>
 
     <div class="pillar">
-
       <div class="pillar-number">02</div>
-
-      <div class="pillar-title">
-        Poucos clientes. Muito bem atendidos.
-      </div>
-
+      <div class="pillar-title">Tecnologia com performance</div>
       <div class="pillar-desc">
-        Preferimos profundidade ao invés de volume. Crescimento exige atenção estratégica.
+        O site, landing page e estrutura digital precisam entregar rapidez, clareza e conversão para sustentar a autoridade da marca.
       </div>
-
     </div>
 
     <div class="pillar">
-
       <div class="pillar-number">03</div>
-
-      <div class="pillar-title">
-        Posicionamento é tudo
-      </div>
-
+      <div class="pillar-title">Conteúdo que comunica valor</div>
       <div class="pillar-desc">
-        Empresas fortes não brigam por preço. Elas são percebidas como referência.
+        Produção de conteúdo, edição profissional e mensagens estratégicas para transformar alcance em relacionamento e vendas.
       </div>
-
     </div>
 
     <div class="pillar">
-
       <div class="pillar-number">04</div>
-
-      <div class="pillar-title">
-        Crescimento previsível
-      </div>
-
+      <div class="pillar-title">Relatórios e otimização contínua</div>
       <div class="pillar-desc">
-        Estratégia, tráfego e posicionamento trabalhando juntos para gerar clientes constantemente.
+        Acompanhamento real, dados, comparativos e ajustes estratégicos para cada campanha e canal de aquisição.
       </div>
-
     </div>
 
   </div>
@@ -1010,69 +1119,36 @@ footer{
   </div>
 
   <h2 class="section-title">
-    Empresas que decidiram <em>crescer.</em>
+    Empresas que decidiram <em>crescer com estratégia.</em>
   </h2>
 
   <div class="testimonial-grid">
 
     <div class="testimonial">
-
-      <div class="testimonial-stars">
-        ★★★★★
-      </div>
-
+      <div class="testimonial-stars">★★★★★</div>
       <div class="testimonial-text">
-        “A Benvra organizou completamente nossa presença digital. Hoje temos previsibilidade de entrada de clientes toda semana.”
+        “A estrutura digital da nossa empresa mudou completamente. O site ficou profissional e o conteúdo passou a vender de forma muito mais clara.”
       </div>
-
-      <div class="testimonial-name">
-        Personal Trainer
-      </div>
-
-      <div class="testimonial-role">
-        Gestão completa de crescimento
-      </div>
-
+      <div class="testimonial-name">Consultoria de Negócios</div>
+      <div class="testimonial-role">Desenvolvimento + Branding</div>
     </div>
 
     <div class="testimonial">
-
-      <div class="testimonial-stars">
-        ★★★★★
-      </div>
-
+      <div class="testimonial-stars">★★★★★</div>
       <div class="testimonial-text">
-        “Percebemos rapidamente que não era apenas tráfego. Era posicionamento, estratégia e construção de marca.”
+        “Percebemos que a marca ficou muito mais forte e as campanhas passaram a gerar leads de melhor qualidade.”
       </div>
-
-      <div class="testimonial-name">
-        Advogado Igor Araujo
-      </div>
-
-      <div class="testimonial-role">
-        Posicionamento digital
-      </div>
-
+      <div class="testimonial-name">Advogado e Especialista</div>
+      <div class="testimonial-role">Tráfego pago + posicionamento</div>
     </div>
 
     <div class="testimonial">
-
-      <div class="testimonial-stars">
-        ★★★★★
-      </div>
-
+      <div class="testimonial-stars">★★★★★</div>
       <div class="testimonial-text">
-        “Hoje nossa empresa transmite muito mais autoridade. Isso mudou completamente a forma que o mercado nos enxerga.”
+        “Com a edição e o conteúdo estratégico, nossa presença no Instagram virou ferramenta de vendas e autoridade.”
       </div>
-
-      <div class="testimonial-name">
-        Clinica Odontológica
-      </div>
-
-      <div class="testimonial-role">
-        Estratégia de crescimento
-      </div>
-
+      <div class="testimonial-name">Clínica e Saúde</div>
+      <div class="testimonial-role">Conteúdo orgânico</div>
     </div>
 
   </div>
@@ -1088,52 +1164,39 @@ footer{
   </div>
 
   <h2 class="section-title">
-    Uma única gestão.<br>
-    <em>Tudo incluso.</em>
+    Um ecossistema completo para <em>vender mais.</em>
   </h2>
 
   <div class="investment-box">
 
     <div class="investment-tag">
-      Gestão completa de crescimento digital
+      Agência Benvra · Growth System
     </div>
 
     <div class="investment-title">
-      Estratégia, posicionamento e aquisição de clientes para sua empresa.
-    </div>
-
-    <div class="investment-price">
-      R$800
+      Desenvolvimento, tráfego, conteúdo e design trabalhando em conjunto para atrair e converter clientes.
     </div>
 
     <div class="investment-sub">
-      Investimento mensal para empresas que querem crescer de forma estratégica através da internet.
+      Fale com a gente e montamos uma estratégia sob medida para o seu negócio, com foco em presença digital, autoridade e crescimento real.
     </div>
 
     <ul class="investment-list">
-
-      <li>• Gestão completa de tráfego pago</li>
-
-      <li>• Posicionamento digital</li>
-
-      <li>• Estratégia de crescimento</li>
-
-      <li>• Conteúdo estratégico</li>
-
-      <li>• Criativos e campanhas</li>
-
-      <li>• Acompanhamento contínuo</li>
-
-      <li>• Suporte direto via WhatsApp</li>
-
+      <li>• Web design e desenvolvimento</li>
+      <li>• Landing page otimizada</li>
+      <li>• Gestão de tráfego pago no Meta Ads</li>
+      <li>• Conteúdo para Instagram</li>
+      <li>• Design visual e criativos</li>
+      <li>• Relatórios e acompanhamento</li>
+      <li>• Domínio e hospedagem</li>
     </ul>
 
     <a
-      href="https://wa.me/5585986810937?text=Olá!%20Quero%20falar%20sobre%20a%20gestão%20completa%20da%20Benfra."
+      href="https://wa.me/5585986810937?text=Olá!%20Quero%20falar%20sobre%20a%20gestão%20completa%20da%20Benvra."
       target="_blank"
       class="investment-btn"
     >
-      Solicitar análise estratégica
+      Entrar em contato
     </a>
 
   </div>
@@ -1147,20 +1210,19 @@ footer{
   <div class="cta-content">
 
     <div class="cta-tag">
-      Crescimento estratégico
+      Construímos seu próximo nível
     </div>
 
     <h2 class="cta-title">
-      Pronto para sua empresa<br>
-      crescer de forma <em>estratégica?</em>
+      Pronto para sua empresa crescer com <em>estrutura, estratégia e presença?</em>
     </h2>
 
     <div class="cta-sub">
-      A Benvra cuida do posicionamento, da estratégia e da geração de clientes para sua empresa.
+      A Benvra cuida de tudo: presença digital, tecnologia, conteúdo, campanhas e design para transformar sua marca em um negócio escalável.
     </div>
 
     <a
-      href="https://wa.me/5585994148657?text=Olá!%20Quero%20uma%20análise%20estratégica%20da%20minha%20empresa."
+      href="https://wa.me/5585994148657?text=Olá!%20Quero%20construir%20um%20ecossistema%20digital%20para%20minha%20empresa."
       target="_blank"
       class="cta-btn"
     >
