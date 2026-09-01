@@ -12,8 +12,8 @@ function OrganicContentPage() {
           <span>Benvra</span>
         </div>
         <nav className="nav">
-          <Link to="/">Início</Link>
-          <Link to="/servicos">Serviços</Link>
+          <Link to="/" replace>Início</Link>
+          <Link to="/servicos" replace>Serviços</Link>
         </nav>
       </header>
 

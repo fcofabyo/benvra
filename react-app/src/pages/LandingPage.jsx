@@ -24,7 +24,7 @@ function LandingPage() {
           <a href="#entregaveis">Entregáveis</a>
           <a href="#contato">Contato</a>
         </nav>
-        <Link className="button primary" to="/capture">Solicitar proposta</Link>
+        <Link className="button primary" to="/capture" replace>Solicitar proposta</Link>
       </header>
 
       <section className="hero management-hero">
@@ -36,7 +36,7 @@ function LandingPage() {
             fortalecer marca e transformar interesse em clientes reais.
           </p>
           <div className="cta-row">
-            <Link className="button primary" to="/capture">Quero essa estrutura</Link>
+            <Link className="button primary" to="/capture" replace>Quero essa estrutura</Link>
             <a className="button ghost" href="#solucao">Ver como funciona</a>
           </div>
           <div className="stats-row">
@@ -141,7 +141,7 @@ function LandingPage() {
 
       <section id="contato" className="section cta-panel management-cta">
         <h2>Quer que sua marca pare de parecer genérica e passe a vender com clareza?</h2>
-        <Link className="button primary" to="/capture">Falar com a Benvra</Link>
+        <Link className="button primary" to="/capture" replace>Falar com a Benvra</Link>
       </section>
     </main>
   );

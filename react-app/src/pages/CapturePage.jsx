@@ -31,11 +31,11 @@ function CapturePage() {
     localStorage.setItem(leadKey, 'completed');
 
     if (form.service === 'toda-gestao') {
-      navigate('/');
+      navigate('/', { replace: true });
       return;
     }
 
-    navigate('/servicos');
+    navigate('/servicos', { replace: true });
   };
 
   return (
@@ -79,7 +79,7 @@ function CapturePage() {
           </label>
 
           <button type="submit" className="button primary full">Continuar</button>
-          <Link className="small-link" to="/capture">Voltar ao início</Link>
+          <Link className="small-link" to="/capture" replace>Voltar ao início</Link>
         </form>
       </div>
     </main>

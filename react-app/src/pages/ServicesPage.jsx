@@ -15,8 +15,8 @@ function ServicesPage() {
           <span>Benvra</span>
         </div>
         <nav className="nav">
-          <Link to="/">Início</Link>
-          <Link to="/capture">Captura</Link>
+          <Link to="/" replace>Início</Link>
+          <Link to="/capture" replace>Captura</Link>
         </nav>
       </header>
 
