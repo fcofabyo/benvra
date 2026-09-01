@@ -241,31 +241,46 @@ button:hover{
     <form id="captureForm">
 
       <div class="form-group">
-        <label for="name">Seu nome</label>
+        <label for="name">Nome Completo</label>
         <input 
           type="text" 
           id="name" 
           name="name" 
-          placeholder="João Silva"
           required
         />
       </div>
 
-    <div class="form-group">
-      <label for="service">Qual serviço te interessa?</label>
-      <select id="service" name="service" required>
-        <option value="">Selecione uma opção</option>
-        <option value="main">Tudo - Ecossistema Completo</option>
-        <option value="web-design">Web Design & Desenvolvimento</option>
-        <option value="organic-content">Conteúdo Orgânico</option>
-        <option value="paid-traffic">Tráfego Pago</option>
-        <option value="design-branding">Design & Branding</option>
-      </select>
-    </div>
+      <div class="form-group">
+        <label for="business">Ramo do negócio</label>
+        <select id="business" name="business" required>
+          <option value="">Selecione uma opção</option>
+          <option value="Beleza e estética">Beleza e estética</option>
+          <option value="Alimentação e gastronomia">Alimentação e gastronomia</option>
+          <option value="Saúde e bem-estar">Saúde e bem-estar</option>
+          <option value="Consultoria e serviços">Consultoria e serviços</option>
+          <option value="Educação e treinamentos">Educação e treinamentos</option>
+          <option value="Imobiliário">Imobiliário</option>
+          <option value="E-commerce e varejo">E-commerce e varejo</option>
+          <option value="Moda e acessórios">Moda e acessórios</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
 
-    <button type="submit">
-      Continuar
-    </button>
+      <div class="form-group">
+        <label for="service">Qual serviço te interessa?</label>
+        <select id="service" name="service" required>
+          <option value="">Selecione uma opção</option>
+          <option value="main">Tudo - Ecossistema Completo</option>
+          <option value="web-design">Web Design & Desenvolvimento</option>
+          <option value="organic-content">Conteúdo Orgânico</option>
+          <option value="paid-traffic">Tráfego Pago</option>
+          <option value="design-branding">Design & Branding</option>
+        </select>
+      </div>
+
+      <button type="submit">
+        Continuar
+      </button>
 
     </form>
 
@@ -279,14 +294,34 @@ button:hover{
 
 <script>
 
+const nameInput = document.getElementById('name');
+const businessInput = document.getElementById('business');
+
+const storedName = localStorage.getItem('benvra_lead_name');
+const storedBusiness = localStorage.getItem('benvra_lead_business');
+
+if (storedName) {
+  nameInput.value = storedName;
+}
+
+if (storedBusiness) {
+  businessInput.value = storedBusiness;
+}
+
 document.getElementById('captureForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
-  const name = document.getElementById('name').value;
+  const name = document.getElementById('name').value.trim();
+  const business = document.getElementById('business').value;
   const service = document.getElementById('service').value;
+
+  if (!name || !business || !service) {
+    return;
+  }
 
   // Salvar dados em localStorage
   localStorage.setItem('benvra_lead_name', name);
+  localStorage.setItem('benvra_lead_business', business);
   localStorage.setItem('benvra_lead_service', service);
 
   // Mapear serviço para página correta
