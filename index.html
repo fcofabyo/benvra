@@ -958,8 +958,10 @@ footer{
 </style>
 
 <script>
-  // Redirecionar para captura na primeira visita
-  if (!localStorage.getItem('benvra_lead_name')) {
+  // Garantir que a página de captura seja a primeira etapa do funil.
+  // Só deixa entrar no site principal depois que o cliente conclui o cadastro.
+  const leadStatus = localStorage.getItem('benvra_lead_status');
+  if (leadStatus !== 'completed') {
     window.location.href = 'capture.html';
   }
 </script>

@@ -299,6 +299,11 @@ const businessInput = document.getElementById('business');
 
 const storedName = localStorage.getItem('benvra_lead_name');
 const storedBusiness = localStorage.getItem('benvra_lead_business');
+const leadStatus = localStorage.getItem('benvra_lead_status');
+
+if (leadStatus === 'completed') {
+  window.location.href = 'index.html';
+}
 
 if (storedName) {
   nameInput.value = storedName;
@@ -323,6 +328,7 @@ document.getElementById('captureForm').addEventListener('submit', function(e) {
   localStorage.setItem('benvra_lead_name', name);
   localStorage.setItem('benvra_lead_business', business);
   localStorage.setItem('benvra_lead_service', service);
+  localStorage.setItem('benvra_lead_status', 'completed');
 
   // Mapear serviço para página correta
   const servicePages = {

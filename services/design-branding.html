@@ -1,164 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design & Branding - Benvra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Cormorant Garamond', 'serif'],
+              sans: ['DM Sans', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                50: '#fff5f1',
+                100: '#ffe4d8',
+                200: '#ffc4a4',
+                300: '#ff9d70',
+                400: '#ff7a59',
+                500: '#f5623f',
+                600: '#d8462b',
+                700: '#b53523',
+                800: '#8a2a22',
+                900: '#5d1e1b'
+              }
+            },
+            boxShadow: {
+              glow: '0 0 0 1px rgba(255,157,112,.3), 0 30px 80px rgba(34, 14, 11, 0.75)'
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      body {
+        background:
+          radial-gradient(circle at top right, rgba(255, 122, 89, 0.2), transparent 30%),
+          linear-gradient(180deg, #120d0b 0%, #1b120f 100%);
+      }
+      .glass {
+        background: rgba(21, 14, 11, 0.75);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+      }
+    </style>
+  </head>
+  <body class="min-h-screen overflow-x-hidden bg-slate-950 text-slate-100 antialiased font-sans">
+    <header class="glass sticky top-0 z-50 border-b border-brand-300/10">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-6 lg:px-10">
+        <a href="../services-select.html" class="flex items-center gap-3">
+          <span class="flex h-10 w-10 items-center justify-center rounded-full border border-brand-200/40 bg-brand-500/10 font-display text-xl font-bold text-brand-100">B</span>
+          <span class="font-display text-2xl uppercase tracking-[0.22em] text-brand-100">Benvra</span>
+        </a>
+        <a href="../capture.html" class="text-xs font-medium uppercase tracking-[0.28em] text-slate-300 transition hover:text-brand-100">← Voltar</a>
+      </nav>
+    </header>
 
-<title>Design & Branding - Benvra</title>
+    <main>
+      <section class="mx-auto grid max-w-7xl gap-12 px-5 pb-20 pt-16 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:pt-24">
+        <div class="flex flex-col justify-center">
+          <p class="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-brand-100">Design & Branding Visual</p>
+          <h1 class="max-w-xl font-display text-5xl leading-none text-white sm:text-6xl lg:text-8xl">
+            Sua marca merece ser <span class="italic text-brand-100">memorável.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-base leading-8 text-slate-300 sm:text-lg">
+            Identidade visual forte, materiais profissionais e direção de arte pensados para criar reconhecimento, confiança e presença real no mercado.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20falar%20sobre%20design%20e%20branding." target="_blank" class="inline-flex items-center justify-center rounded-full border border-brand-200/40 bg-brand-500/10 px-6 py-3 text-xs font-semibold uppercase tracking-[0.26em] text-brand-50 transition hover:-translate-y-0.5 hover:bg-brand-500/20">Falar sobre design</a>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3 text-[10px] uppercase tracking-[0.24em] text-brand-50">
+            <span class="rounded-full border border-brand-200/30 bg-brand-500/10 px-3 py-2">Logo</span>
+            <span class="rounded-full border border-brand-200/30 bg-brand-500/10 px-3 py-2">Manual</span>
+            <span class="rounded-full border border-brand-200/30 bg-brand-500/10 px-3 py-2">Social</span>
+            <span class="rounded-full border border-brand-200/30 bg-brand-500/10 px-3 py-2">Campanha</span>
+          </div>
+        </div>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+        <div class="relative flex min-h-[440px] items-center justify-center">
+          <div class="absolute inset-0 rounded-[32px] bg-brand-500/10 blur-3xl"></div>
+          <div class="relative h-[440px] w-full max-w-[560px] overflow-hidden rounded-[30px] border border-brand-200/20 bg-slate-950/80 shadow-glow">
+            <div class="absolute right-6 top-6 w-44 rounded-2xl border border-brand-200/20 bg-slate-950/90 p-4 shadow-2xl">
+              <p class="text-[10px] uppercase tracking-[0.24em] text-slate-400">Marca</p>
+              <p class="mt-3 font-display text-4xl text-brand-100">B</p>
+            </div>
 
-<style>
+            <div class="absolute left-5 right-5 top-20 rounded-[26px] border border-brand-200/20 bg-gradient-to-br from-brand-500/10 to-white/5 p-6">
+              <div class="flex items-center gap-4">
+                <div class="flex h-24 w-24 items-center justify-center rounded-[24px] bg-gradient-to-br from-brand-100 via-brand-300 to-brand-500 font-display text-5xl font-bold text-slate-900">B</div>
+                <div>
+                  <div class="font-display text-5xl uppercase tracking-[0.1em] text-white">Benvra</div>
+                  <div class="mt-2 inline-flex rounded-full border border-brand-200/30 bg-brand-500/10 px-3 py-1 text-[10px] uppercase tracking-[0.24em] text-brand-100">Brand identity</div>
+                </div>
+              </div>
+            </div>
 
-*, *::before, *::after{ margin:0; padding:0; box-sizing:border-box; }
+            <div class="absolute bottom-5 left-5 right-5">
+              <div class="flex gap-3">
+                <span class="h-16 flex-1 rounded-2xl bg-[#fff4ee]"></span>
+                <span class="h-16 flex-1 rounded-2xl bg-[#ffc4a4]"></span>
+                <span class="h-16 flex-1 rounded-2xl bg-[#ff9d70]"></span>
+                <span class="h-16 flex-1 rounded-2xl bg-[#ff7a59]"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-:root{
-  --primary:#FF7A59;
-  --primary-2:#FFB38F;
-  --primary-soft:rgba(255,122,89,.12);
-  --panel:#1A1615;
-  --panel-2:#120E0D;
-  --dark:#100C0B;
-  --off:#FFF5F1;
-  --muted:#D9C4BC;
-  --line:rgba(255,179,143,.24);
-}
+      <section class="mx-auto max-w-7xl px-5 py-12 sm:px-6 lg:px-10 lg:py-20">
+        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-brand-100">O que você recebe</p>
+        <h2 class="max-w-3xl font-display text-4xl leading-none text-white sm:text-5xl lg:text-6xl">
+          Identidade visual <span class="italic text-brand-100">profissional.</span>
+        </h2>
 
-html{ scroll-behavior:smooth; }
-body{ background:linear-gradient(180deg, var(--dark) 0%, #1a120f 100%); color:var(--off); font-family:'DM Sans',sans-serif; overflow-x:hidden; }
-body::before{ content:''; position:fixed; inset:0; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); opacity:.45; pointer-events:none; }
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          <article class="rounded-[26px] border border-brand-200/15 bg-slate-900/50 p-6">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-200/20 bg-brand-500/10 text-xl text-brand-100">🎨</div>
+            <h3 class="mb-3 font-display text-3xl text-white">Branding & identidade</h3>
+            <ul class="space-y-3 text-sm leading-7 text-slate-300">
+              <li>• Desenvolvimento de marca e valores</li>
+              <li>• Logo e identidade visual</li>
+              <li>• Paleta de cores e tipografia</li>
+              <li>• Guia de brand completo</li>
+            </ul>
+          </article>
 
-nav{ position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:24px 60px; background:rgba(16,12,11,.8); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
-.nav-logo{ display:flex; align-items:center; gap:12px; text-decoration:none; }
-.nav-logo-circle{ width:38px; height:38px; border-radius:50%; display:flex; align-items:center; justify-content:center; border:1px solid rgba(255,179,143,.35); background:rgba(255,122,89,.08); color:var(--primary-2); font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:700; }
-.nav-brand{ font-family:'Cormorant Garamond',serif; font-size:22px; letter-spacing:4px; color:var(--primary-2); text-transform:uppercase; }
-.nav-back{ text-decoration:none; color:var(--muted); font-size:12px; letter-spacing:2px; text-transform:uppercase; transition:.2s; }
-.nav-back:hover{ color:var(--primary-2); }
+          <article class="rounded-[26px] border border-brand-200/15 bg-slate-900/50 p-6">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-200/20 bg-brand-500/10 text-xl text-brand-100">📱</div>
+            <h3 class="mb-3 font-display text-3xl text-white">Design para social</h3>
+            <ul class="space-y-3 text-sm leading-7 text-slate-300">
+              <li>• Posts e reels com visual forte</li>
+              <li>• Templates para Instagram</li>
+              <li>• Criativos para campanhas</li>
+              <li>• Consistência visual em todos os canais</li>
+            </ul>
+          </article>
 
-.hero{ min-height:100vh; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:36px; padding:170px 60px 80px; position:relative; overflow:hidden; }
-.hero::before{ content:''; position:absolute; right:-100px; top:60px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(255,122,89,.22), transparent 70%); }
-.hero-content{ position:relative; z-index:2; max-width:700px; }
-.hero-eyebrow{ font-size:11px; letter-spacing:4px; text-transform:uppercase; color:var(--primary-2); margin-bottom:24px; }
-.hero-title{ font-family:'Cormorant Garamond',serif; font-size:clamp(54px,7vw,86px); line-height:.98; font-weight:700; margin-bottom:24px; }
-.hero-title em{ color:var(--primary-2); font-style:italic; }
-.hero-sub{ font-size:17px; line-height:1.8; color:var(--muted); max-width:620px; margin-bottom:30px; }
-.hero-badges{ display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px; }
-.hero-badges span{ padding:9px 12px; border-radius:999px; background:rgba(255,122,89,.08); border:1px solid var(--line); color:var(--primary-2); font-size:11px; letter-spacing:2px; text-transform:uppercase; }
-.btn-primary{ display:inline-block; text-decoration:none; padding:18px 30px; background:rgba(255,122,89,.1); border:1px solid rgba(255,179,143,.42); color:var(--primary-2); font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:700; border-radius:999px; transition:.2s; }
-.btn-primary:hover{ transform:translateY(-2px); background:rgba(255,122,89,.18); }
+          <article class="rounded-[26px] border border-brand-200/15 bg-slate-900/50 p-6">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-200/20 bg-brand-500/10 text-xl text-brand-100">📄</div>
+            <h3 class="mb-3 font-display text-3xl text-white">Materiais profissionais</h3>
+            <ul class="space-y-3 text-sm leading-7 text-slate-300">
+              <li>• Cartão de visita e assinatura</li>
+              <li>• Catálogos e apresentações</li>
+              <li>• Mockups e protótipos</li>
+              <li>• Design de embalagem e materiais</li>
+            </ul>
+          </article>
 
-.hero-visual{ position:relative; z-index:2; min-height:440px; }
-.visual-panel{ position:absolute; inset:18px 0 0 30px; border-radius:30px; border:1px solid var(--line); background:linear-gradient(180deg, rgba(30,22,20,.96), rgba(14,10,9,.96)); box-shadow:0 30px 80px rgba(0,0,0,.22); }
-.logo-board{ position:absolute; left:28px; right:20px; top:28px; height:240px; border-radius:24px; border:1px solid var(--line); background:linear-gradient(135deg, rgba(255,122,89,.08), rgba(255,255,255,.03)); }
-.logo-board .mark{ width:120px; height:120px; border-radius:26px; background:linear-gradient(135deg, #ffb38f, #ff7a59); position:absolute; left:40px; top:60px; display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-size:52px; font-weight:700; color:#150d0b; }
-.logo-board .brand{ position:absolute; left:190px; top:78px; font-family:'Cormorant Garamond',serif; font-size:54px; letter-spacing:3px; color:var(--off); }
-.logo-board .tag{ position:absolute; left:192px; top:150px; padding:8px 12px; border-radius:999px; background:rgba(255,122,89,.1); border:1px solid var(--line); color:var(--primary-2); font-size:10px; letter-spacing:2px; text-transform:uppercase; }
-.color-palette{ position:absolute; left:28px; bottom:25px; width:210px; display:flex; gap:10px; }
-.color-palette span{ display:block; flex:1; height:58px; border-radius:14px; border:1px solid rgba(255,255,255,.12); }
-.brand-card{ position:absolute; right:0; top:30px; width:200px; border-radius:22px; border:1px solid var(--line); background:rgba(25,18,17,.96); padding:18px 16px; }
-.brand-card .chip{ font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--primary-2); }
-.brand-card .name{ font-family:'Cormorant Garamond',serif; font-size:34px; margin-top:12px; }
+          <article class="rounded-[26px] border border-brand-200/15 bg-slate-900/50 p-6">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-brand-200/20 bg-brand-500/10 text-xl text-brand-100">📌</div>
+            <h3 class="mb-3 font-display text-3xl text-white">Estratégia visual</h3>
+            <ul class="space-y-3 text-sm leading-7 text-slate-300">
+              <li>• Direção de arte para campanhas</li>
+              <li>• Ajustes conforme necessidade</li>
+              <li>• Adaptabilidade para campanhas e formatos</li>
+              <li>• Reforço de posicionamento e diferenciação</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-.section{ padding:100px 60px 80px; }
-.section-head{ max-width:760px; margin-bottom:32px; }
-.section-eyebrow{ font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--primary-2); margin-bottom:18px; }
-.section-title{ font-family:'Cormorant Garamond',serif; font-size:clamp(40px,5vw,62px); line-height:1.02; max-width:760px; }
-.section-title em{ color:var(--primary-2); font-style:italic; }
-.feature-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:22px; margin-top:50px; }
-.feature-card{ background:linear-gradient(180deg, rgba(26,22,21,.96), rgba(12,10,9,.96)); border:1px solid var(--line); border-radius:24px; padding:28px 24px; min-height:220px; }
-.icon-wrap{ width:52px; height:52px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:18px; background:rgba(255,122,89,.1); border:1px solid var(--line); color:var(--primary-2); }
-.feature-card h3{ font-family:'Cormorant Garamond',serif; font-size:30px; margin-bottom:12px; color:var(--off); }
-.feature-card p{ color:var(--muted); line-height:1.7; font-size:14px; }
-.cta-box{ margin-top:30px; background:linear-gradient(135deg, rgba(255,122,89,.12), rgba(255,179,143,.04)); border:1px solid var(--line); border-radius:28px; padding:50px 42px; text-align:center; }
-.cta-box h2{ font-family:'Cormorant Garamond',serif; font-size:40px; margin-bottom:16px; }
-.cta-box p{ color:var(--muted); font-size:15px; margin-bottom:26px; line-height:1.7; }
-footer{ border-top:1px solid var(--line); padding:40px 60px; display:flex; align-items:center; justify-content:space-between; color:var(--muted); font-size:12px; }
-.footer-brand{ font-family:'Cormorant Garamond',serif; font-size:24px; letter-spacing:3px; text-transform:uppercase; color:var(--primary-2); }
+      <section class="mx-auto max-w-7xl px-5 pb-20 pt-4 sm:px-6 lg:px-10">
+        <div class="rounded-[30px] border border-brand-200/15 bg-gradient-to-r from-brand-500/10 via-slate-900 to-brand-500/10 p-8 text-center sm:p-12">
+          <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-100">Sua marca vale</p>
+          <h3 class="mt-4 font-display text-4xl text-white sm:text-5xl">Construa uma marca que as pessoas reconheçam</h3>
+          <p class="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-300">
+            A identidade certa transmite profissionalismo e gera conexão real com seu público antes mesmo de você falar.
+          </p>
+          <div class="mt-8">
+            <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20desenvolver%20a%20identidade%20visual%20da%20minha%20marca." target="_blank" class="inline-flex items-center justify-center rounded-full border border-brand-200/40 bg-brand-500/10 px-8 py-3 text-xs font-semibold uppercase tracking-[0.26em] text-brand-50 transition hover:-translate-y-0.5 hover:bg-brand-500/20">Solicitar análise</a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-@media(max-width:980px){ nav{ padding:20px 24px; } .hero, .section, footer{ padding-left:24px; padding-right:24px; } .hero{ grid-template-columns:1fr; padding-top:150px; } .hero-visual{ min-height:420px; } .feature-grid{ grid-template-columns:1fr; } footer{ flex-direction:column; gap:12px; text-align:center; } }
-
-</style>
-</head>
-
-<body>
-
-<nav>
-  <a href="../services-select.html" class="nav-logo">
-    <div class="nav-logo-circle">B</div>
-    <div class="nav-brand">Benvra</div>
-  </a>
-  <a href="../capture.html" class="nav-back">← Voltar</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Design & Branding Visual</div>
-    <h1 class="hero-title">Sua marca merece ser <em>memorável.</em></h1>
-    <p class="hero-sub">
-      Identidade visual forte, design estratégico e materiais profissionais que deixam sua marca diferente no mercado.
-    </p>
-    <div class="hero-buttons">
-      <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20falar%20sobre%20design%20e%20branding." target="_blank" class="btn-primary">
-        Falar sobre design
-      </a>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="section-eyebrow">O que você recebe</div>
-  <h2 class="section-title">Identidade visual <em>profissional.</em></h2>
-
-  <div class="content-block">
-    <h3>Branding & Identidade</h3>
-    <ul>
-      <li>Desenvolvimento de marca e valores</li>
-      <li>Logo e identidade visual</li>
-      <li>Paleta de cores estratégica</li>
-      <li>Guia de brand completo</li>
-    </ul>
-
-    <h3>Design para Social Media</h3>
-    <ul>
-      <li>Criação de posts e reels</li>
-      <li>Templates para Instagram</li>
-      <li>Criativos para campanhas</li>
-      <li>Estilo visual consistente</li>
-    </ul>
-
-    <h3>Materiais Profissionais</h3>
-    <ul>
-      <li>Cartão de visita e assinatura</li>
-      <li>Catálogos e apresentações</li>
-      <li>Mockups e protótipos</li>
-      <li>Design de embalagem</li>
-    </ul>
-
-    <h3>Estratégia Visual</h3>
-    <ul>
-      <li>Direção de arte para campanhas</li>
-      <li>Consistência visual em todos os canais</li>
-      <li>Adaptação para diferentes formatos</li>
-      <li>Ajustes e revisões conforme necessário</li>
-    </ul>
-  </div>
-</section>
-
-<section class="section">
-  <div class="cta-box">
-    <h2>Construa uma marca que as pessoas reconheçam</h2>
-    <p>Vamos criar uma identidade visual que represente verdadeiramente seu negócio e deixe impacto no mercado.</p>
-    <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20desenvolver%20a%20identidade%20visual%20da%20minha%20marca." target="_blank" class="btn-primary">
-      Solicitar análise
-    </a>
-  </div>
-</section>
-
-<footer>
-  <div class="footer-brand">Benvra</div>
-  <div>© 2026 Benvra. Todos os direitos reservados.</div>
-  <div>Design estratégico e branding visual.</div>
-</footer>
-
-</body>
+    <footer class="border-t border-brand-200/10 bg-slate-950/80">
+      <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-5 py-8 text-center text-xs uppercase tracking-[0.2em] text-slate-400 sm:px-6 lg:flex-row lg:px-10 lg:text-left">
+        <div class="font-display text-2xl uppercase tracking-[0.3em] text-brand-100">Benvra</div>
+        <div>© 2026 Benvra</div>
+        <div>Design estratégico e branding</div>
+      </div>
+    </footer>
+  </body>
 </html>
