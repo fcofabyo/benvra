@@ -177,9 +177,9 @@ option{
 }
 
 button{
-  background:var(--gold);
-  color:var(--dark);
-  border:none;
+  background:rgba(201,168,76,.15);
+  border:1px solid rgba(201,168,76,.3);
+  color:var(--gold);
   padding:14px 24px;
   font-size:12px;
   letter-spacing:2px;
@@ -192,8 +192,8 @@ button{
 }
 
 button:hover{
-  opacity:.9;
-  transform:translateY(-2px);
+  background:rgba(201,168,76,.25);
+  border-color:rgba(201,168,76,.5);
 }
 
 .footer-text{
@@ -251,24 +251,21 @@ button:hover{
         />
       </div>
 
-      <div class="form-group">
-        <label for="business">Ramo do seu negócio</label>
-        <select id="business" name="business" required>
-          <option value="">Selecione uma opção</option>
-          <option value="Consultoria">Consultoria</option>
-          <option value="E-commerce">E-commerce</option>
-          <option value="Saúde">Saúde & Bem-estar</option>
-          <option value="Educação">Educação</option>
-          <option value="Tecnologia">Tecnologia</option>
-          <option value="Imóveis">Imóveis</option>
-          <option value="Serviços">Serviços</option>
-          <option value="Outro">Outro</option>
-        </select>
-      </div>
+    <div class="form-group">
+      <label for="service">Qual serviço te interessa?</label>
+      <select id="service" name="service" required>
+        <option value="">Selecione uma opção</option>
+        <option value="main">Tudo - Ecossistema Completo</option>
+        <option value="web-design">Web Design & Desenvolvimento</option>
+        <option value="organic-content">Conteúdo Orgânico</option>
+        <option value="paid-traffic">Tráfego Pago</option>
+        <option value="design-branding">Design & Branding</option>
+      </select>
+    </div>
 
-      <button type="submit">
-        Continuar
-      </button>
+    <button type="submit">
+      Continuar
+    </button>
 
     </form>
 
@@ -286,14 +283,25 @@ document.getElementById('captureForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
   const name = document.getElementById('name').value;
-  const business = document.getElementById('business').value;
+  const service = document.getElementById('service').value;
 
   // Salvar dados em localStorage
   localStorage.setItem('benvra_lead_name', name);
-  localStorage.setItem('benvra_lead_business', business);
+  localStorage.setItem('benvra_lead_service', service);
 
-  // Redirecionar para o site principal
-  window.location.href = 'index.html';
+  // Mapear serviço para página correta
+  const servicePages = {
+    'main': 'index.html',
+    'web-design': 'services/web-design.html',
+    'organic-content': 'services/organic-content.html',
+    'paid-traffic': 'services/paid-traffic.html',
+    'design-branding': 'services/design-branding.html'
+  };
+
+  const targetPage = servicePages[service] || 'index.html';
+
+  // Redirecionar para a página apropriada
+  window.location.href = targetPage;
 });
 
 </script>
