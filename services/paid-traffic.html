@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Tráfego Pago - Benvra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+
+<style>
+
+*, *::before, *::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --gold:#C9A84C;
+  --dark:#0A0C0E;
+  --dark-2:#111416;
+  --off:#F0EBE1;
+  --muted:#8D8D8D;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--dark);
+  color:var(--off);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+}
+
+/* NOISE */
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.4;
+  pointer-events:none;
+}
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:24px 60px;
+  background:rgba(10,12,14,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(201,168,76,.08);
+}
+
+.nav-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.nav-logo-circle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid rgba(201,168,76,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--gold);
+}
+
+.nav-brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:22px;
+  letter-spacing:4px;
+  color:var(--gold);
+  text-transform:uppercase;
+}
+
+.nav-back{
+  text-decoration:none;
+  color:var(--muted);
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  transition:.2s;
+}
+
+.nav-back:hover{
+  color:var(--gold);
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:160px 60px 120px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+}
+
+.hero-eyebrow{
+  font-size:11px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:28px;
+}
+
+.hero-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(56px,8vw,90px);
+  line-height:1;
+  font-weight:700;
+  margin-bottom:30px;
+}
+
+.hero-title em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.hero-sub{
+  font-size:17px;
+  line-height:1.8;
+  color:var(--muted);
+  max-width:620px;
+  margin-bottom:48px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--gold);
+  color:var(--dark);
+  text-decoration:none;
+  padding:18px 40px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  font-weight:600;
+  transition:.2s;
+}
+
+.btn-primary:hover{
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+.section{
+  padding:120px 60px;
+}
+
+.section-eyebrow{
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(40px,5vw,62px);
+  line-height:1.1;
+  max-width:700px;
+  margin-bottom:70px;
+}
+
+.section-title em{
+  color:var(--gold);
+  font-style:italic;
+}
+
+.content-block{
+  max-width:760px;
+  line-height:1.8;
+  font-size:15px;
+}
+
+.content-block h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:28px;
+  margin:40px 0 20px 0;
+  color:var(--gold);
+}
+
+.content-block ul{
+  list-style:none;
+  margin:20px 0;
+}
+
+.content-block li{
+  padding:12px 0;
+  padding-left:24px;
+  position:relative;
+}
+
+.content-block li::before{
+  content:'•';
+  position:absolute;
+  left:0;
+  color:var(--gold);
+  font-weight:bold;
+}
+
+.cta-box{
+  background:var(--dark-2);
+  border:1px solid rgba(201,168,76,.12);
+  padding:60px 48px;
+  margin-top:80px;
+  text-align:center;
+}
+
+.cta-box h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.cta-box p{
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:32px;
+  line-height:1.6;
+}
+
+footer{
+  border-top:1px solid rgba(201,168,76,.08);
+  padding:40px 60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.footer-brand{
+  font-family:'Cormorant Garamond',serif;
+  color:var(--gold);
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-size:22px;
+}
+
+@media(max-width:980px){
+  nav{
+    padding:18px 20px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+
+  .hero{
+    padding:120px 20px 36px;
+    min-height:auto;
+  }
+
+  .hero-title{
+    font-size:clamp(40px, 12vw, 60px);
+  }
+
+  .section{
+    padding:80px 20px;
+  }
+
+  .section-title{
+    font-size:clamp(34px, 10vw, 52px);
+    margin-bottom:42px;
+  }
+
+  .cta-box{
+    padding:40px 28px;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+    padding:32px 20px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="../services-select.html" class="nav-logo">
+    <div class="nav-logo-circle">B</div>
+    <div class="nav-brand">Benvra</div>
+  </a>
+  <a href="../services-select.html" class="nav-back">← Voltar</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Gestão de Tráfego Pago</div>
+    <h1 class="hero-title">Cliques que viram <em>clientes.</em></h1>
+    <p class="hero-sub">
+      Campanhas estratégicas no Meta Ads com foco em conversão, otimização contínua e relatórios detalhados de ROI.
+    </p>
+    <div class="hero-buttons">
+      <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20falar%20sobre%20tráfego%20pago." target="_blank" class="btn-primary">
+        Falar sobre tráfego pago
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-eyebrow">O que você recebe</div>
+  <h2 class="section-title">Campanhas que <em>convertem.</em></h2>
+
+  <div class="content-block">
+    <h3>Estratégia de Campanha</h3>
+    <ul>
+      <li>Análise de público e segmentação</li>
+      <li>Definição de objetivos claros</li>
+      <li>Planejamento de orçamento</li>
+      <li>Estrutura de campanhas otimizada</li>
+    </ul>
+
+    <h3>Criação & Criativos</h3>
+    <ul>
+      <li>Desenvolvimento de anúncios atraentes</li>
+      <li>Testes A/B de criativos</li>
+      <li>Copy persuasivo e focado</li>
+      <li>Integração com landing pages</li>
+    </ul>
+
+    <h3>Otimização Contínua</h3>
+    <ul>
+      <li>Monitoramento diário de performance</li>
+      <li>Ajustes de bidding e segmentação</li>
+      <li>Otimização de conversão</li>
+      <li>Redução de custo por lead</li>
+    </ul>
+
+    <h3>Relatórios & ROI</h3>
+    <ul>
+      <li>Relatórios detalhados mensais</li>
+      <li>Análise de ROI das campanhas</li>
+      <li>Comparativo de performance</li>
+      <li>Recomendações de estratégia</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-box">
+    <h2>Transforme seu investimento em tráfego em vendas</h2>
+    <p>Vamos analisar suas campanhas e criar uma estratégia que realmente gere clientes.</p>
+    <a href="https://wa.me/5585986810937?text=Olá!%20Quero%20analisar%20minhas%20campanhas%20de%20tráfego%20pago." target="_blank" class="btn-primary">
+      Solicitar análise
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Benvra</div>
+  <div>© 2026 Benvra. Todos os direitos reservados.</div>
+  <div>Tráfego pago e gestão de campanhas Meta.</div>
+</footer>
+
+</body>
+</html>
